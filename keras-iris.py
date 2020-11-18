@@ -1,18 +1,17 @@
-# tensorflowを取り込む
+# tensorflow1のとき
 # import tensorflow.compat.v1 as tf
 # tf.disable_v2_behavior()
-# import tensorflow as tf
+# from tensorflow.contrib.keras  as keras
 
-import tensorflow._api.v2.compat.v1 as tf
-from tensorflow.python.compiler.tensorrt import trt_convert as trt
-import trt.keras as keras
-# import keras
+# tensorflow2のとき
+import tensorflow as tf
+import tensorflow.keras as keras
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 
 # アヤメデータの読み込み
-iris_data = pd.read_csv("../../iris.csv", encoding="utf-8")
+iris_data = pd.read_csv("./iris.csv", encoding="utf-8")
 
 # アヤメデータをラベルと入力データに分離する
 y_labels = iris_data.loc[:,"Name"]
